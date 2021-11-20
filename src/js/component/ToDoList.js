@@ -1,15 +1,21 @@
 import React from "react";
-import PropTypes from "prop-types";
-import "../../styles/home.scss";
 import { Context } from "../store/appContext.js";
+import ToDoForm from "./ToDoForm.js";
+import ToDo from "./ToDo.js";
+import ToDoCounter from "./ToDoCounter.js";
+import ToDoListHeader from "./ToDoHeader.js";
 
 export const ToDoList = props => {
-	{
-		const { todos } = React.useContext(Context);
+	const { addTodo } = React.useContext(Context);
 
-		console.log({ todos });
-
-		return <div>{todos}</div>;
-	}
+	return (
+		<div className="custom-container row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+			<ToDoListHeader />
+			<ToDoForm onSubmit={addTodo} />
+			<ToDoCounter />
+			<ToDo />
+		</div>
+	);
 };
+
 export default ToDoList;
