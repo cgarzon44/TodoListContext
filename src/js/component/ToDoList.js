@@ -8,11 +8,11 @@ import UserForm from "./UserForm/Userform.js";
 import NewUser from "./UserForm/NewUser.js";
 
 export const ToDoList = props => {
-	const { addTodo } = React.useContext(Context);
+	const { addTodo, addUser } = React.useContext(Context);
 
 	return (
 		<>
-			<UserForm onSubmit={addTodo} />
+			<UserForm onSubmit={addUser} />
 			<NewUser />
 
 			<div className="custom-container row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
