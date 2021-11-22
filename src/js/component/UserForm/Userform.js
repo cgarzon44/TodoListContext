@@ -28,26 +28,22 @@ function UserForm(props) {
 	};
 
 	return (
-		<form
-			className=" custom-container row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center"
-			onSubmit={handleSubmit}>
-			<div className=" row align-items-center justify-content-center">
-				<div className="col">
-					<input
-						type="text"
-						value={input}
-						className="form-control form-control-lg border-0 add-todo-input bg-transparent rounded"
-						placeholder="What needs to be done?"
-						onChange={handleChange}
-						ref={inputRef}
-					/>
-				</div>
+		<form>
+			<div className="col">
+				<input
+					type="text"
+					value={input}
+					className=" border-0  bg-transparent rounded"
+					placeholder="Add User"
+					onChange={handleChange}
+					ref={inputRef}
+				/>
+			</div>
 
-				<div className="col-auto px-0 mx-0 mr-2">
-					<button onClick={handleSubmit} type="button" className="btn btn-primary">
-						Add
-					</button>
-				</div>
+			<div className=" px-0 mx-0 mr-2">
+				<button onClick={handleSubmit} type="button" className="btn btn-primary">
+					Add
+				</button>
 			</div>
 		</form>
 	);

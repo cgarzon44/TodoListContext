@@ -9,28 +9,14 @@ function NewUser(props) {
 	const [isShownHoverContent, setIsShownHoverContent] = useState(-1);
 
 	return users.map(user => (
-		<div
-			className="d-flex"
-			key={user.id}
-			onMouseEnter={() => setIsShownHoverContent(user.id)}
-			onMouseLeave={() => setIsShownHoverContent(-1)}>
+		<div key={user.id} className="d-flex">
 			<div className="p-2 w-100">
-				<ul
-					className={user.isComplete ? "list-group list-group-flush complete" : "list-group list-group-flush"}
-					onClick={() => completeTodo(user.id)}>
+				<ul>
 					<li className="list-group-item">{user.text}</li>
 				</ul>
 			</div>
-
 			<div>
-				<i
-					onClick={() => removeUser(user.id)}
-					className={
-						isShownHoverContent === user.id
-							? "fas fa-times p-2 flex-shrink-1 "
-							: "fas fa-times p-2 flex-shrink-1 hide"
-					}
-				/>
+				<i onClick={() => removeUser(users)} className="fas fa-user-times" />
 			</div>
 		</div>
 	));

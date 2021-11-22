@@ -15,7 +15,7 @@ export const withGlobalState = ComponentToBeWrapperd => {
 		};
 
 		const removeUser = id => {
-			const removeArr = user(user => user.id !== id);
+			const removeArr = user.filter(user => user.id !== id);
 
 			setUser(removeArr);
 		};
