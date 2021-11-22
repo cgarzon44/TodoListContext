@@ -15,9 +15,9 @@ export const withGlobalState = ComponentToBeWrapperd => {
 		};
 
 		const removeUser = id => {
-			const removeArr = user.filter(user => user.id !== id);
+			const removeUser = users.filter(user => user.id !== id);
 
-			setUser(removeArr);
+			setUser(removeUser);
 		};
 
 		const addTodo = todo => {
@@ -33,7 +33,7 @@ export const withGlobalState = ComponentToBeWrapperd => {
 			if (!user.text || /^\s*$/.test(user.text)) {
 				return;
 			}
-			const newUsers = [user, ...users];
+			const newUsers = [user];
 
 			setUser(newUsers);
 		};
