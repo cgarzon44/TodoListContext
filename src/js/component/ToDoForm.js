@@ -54,7 +54,7 @@ function ToDoForm(props) {
 }
 
 ToDoForm.propTypes = {
-	onSubmit: PropTypes.func
+	onSubmit: PropTypes.onSubmit
 };
 
 export default ToDoForm;
